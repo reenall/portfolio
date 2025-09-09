@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="dist/style.css" />
+    <title>Renaldi | Portfolio</title>
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="src/swiper/swiper-bundle.min.css" />
+    <script src="src/swiper/swiper-bundle.min.js"></script>
+
+    <style>
+      .swiper-navBtn {
+        color: #cbd5e1;
+        transition-duration: 300ms;
+      }
+      .swiper-navBtn:hover {
+        color: #475569;
+        transition-duration: 300ms;
+      }
+
+      .swiper-pagination-bullet {
+        background-color: #cbd5e1;
+        transition-duration: 500ms;
+      }
+
+      .swiper-navBtn::before,
+      .swiper-navBtn::after {
+        font-size: 30px;
+      }
+
+      @media (max-width: 1024px) {
+        .swiper-navBtn {
+          display: none;
+        }
+      }
+    </style>
+    <!-- END Swiper -->
+
+    <script>
+      if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script src="./src/utils/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body > section:nth-child(even) {
+  @apply bg-bgPrimary dark:bg-bgDarkPrimary transition-all duration-500;
+}
+body > section:nth-child(odd) {
+  @apply bg-bgSecondary dark:bg-bgDarkSecondary transition-all duration-500;
+}
+
+body::-webkit-scrollbar {
+  @apply w-[5px] dark:w-[4px] dark:bg-black;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 hover:bg-slate-400 rounded-full dark:bg-slate-800 dark:hover:bg-slate-700;
+}
+
+/* ------------------------- General ------------------------- */
+/* Title */
+.first-title {
+  @apply relative text-[0.9rem] text-secondary mb-3 uppercase tracking-titleSpacing
+  dark:text-darkPrimary;
+}
+
+.first-title-stripe {
+  @apply relative inline-block pl-[40px] text-[0.9rem] text-secondary uppercase tracking-titleSpacing
+  dark:text-darkPrimary;
+}
+
+.first-title-stripe::before,
+.right-contact-title::before {
+  @apply content-[""] absolute left-0 top-[50%] w-[30px] h-[1px] bg-[#d1d5db];
+}
+
+.second-title {
+  @apply text-3xl font-light text-primaryIconColor mt-3 mb-4 lg:text-[2rem]
+  dark:text-darkPrimaryIconColor;
+}
+
+/* button */
+.btn {
+  @apply font-medium text-white bg-primaryIconColor
+   hover:bg-secondaryIconColor hover:text-slate-50 transition-all duration-500 ease-in-out
+   dark:text-black dark:bg-slate-300 dark:hover:bg-slate-600;
+}
+
+/* SVG icons */
+#skills svg,
+#contact svg {
+  @apply w-[22px] mx-auto fill-primaryIconColor dark:fill-darkPrimaryIconColor;
+}
+
+/* Cards */
+.card-title {
+  @apply mt-3 mb-5 block hover:text-primaryIconColor
+  dark:text-darkPrimaryIconColor dark:hover:text-darkSecondary;
+}
+
+.card-sub-title {
+  @apply pt-5 pb-3 
+  dark:text-darkPrimary;
+}
+
+.card-button {
+  @apply inline-block mt-5 mb-2 py-2 rounded-xl italic text-secondary underline underline-offset-[10px]
+   hover:text-primary transition duration-300 ease-in-out
+   dark:text-darkSecondary dark:hover:text-darkPrimary;
+}
+
+/* ------------------------- Specific ------------------------- */
+
+/* ----- Dark Mode toggle ----- */
+.dark-toggle-animate {
+  @apply bg-slate-300;
+}
+.dark-toggle-animate > .circle-toggle {
+  @apply translate-x-5 bg-primary;
+}
+
+/* ----- Nav-fixed ----- */
+.nav-fixed {
+  @apply fixed py-2 lg:py-1 bg-white/[0.7] backdrop-blur-[5px] shadow-sm shadow-slate-50
+  dark:bg-bgDarkPrimary dark:shadow-slate-950;
+}
+
+/* ----- Nav list ----- */
+.nav-list-item {
+  @apply block mx-6 text-primary text-sm
+  transition-all duration-500 group-hover:tracking-widest group-hover:underline group-hover:underline-offset-[15px] group-hover:text-primaryIconColor
+dark:text-darkSecondary dark:group-hover:text-darkPrimaryIconColor;
+}
+
+/* ----- Hamburger ----- */
+.hamburger-line {
+  @apply block w-[25px] h-[1px] my-[6px] rounded-full bg-primary
+  dark:bg-darkSecondary;
+}
+/* transisi dan origin (sumbu) ga bisa langsung di sini, transisi outnya jadi berantakan karna class .hamburger-activenya langsung hilang (penambahan classnya via toggle JS) */
+.hamburger-active > span:nth-child(1) {
+  @apply -rotate-45 mb-[9px];
+}
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+.hamburger-active > span:nth-child(3) {
+  @apply rotate-45;
+}
+
+/* ----- Skills ----- */
+.skill-container {
+  @apply w-full p-4 max-w-[450px] xl:w-1/3;
+}
+
+.skill-card {
+  @apply w-full py-14 px-10 text-center rounded-xl shadow-sm bg-bgPrimary dark:bg-bgDarkPrimary dark:shadow-black transition-all duration-500
+  h-[320px];
+}
+
+/* ----- Project ----- */
+.project-card-wrapper {
+  @apply mb-8 max-w-[350px] mx-auto border border-indigo-50 bg-white text-secondary shadow-lg rounded-xl overflow-hidden transition-all duration-500
+  dark:text-darkSecondary dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black;
+}
+
+.project-img {
+  @apply relative flex items-center justify-center h-[290px] px-1 py-2 transition-all duration-500 
+  bg-slate-100 dark:bg-slate-800
+  md:h-[250px]
+  lg:h-[290px];
+}
+
+.project-img .horizontal-img {
+  @apply absolute left-7 z-10 max-w-[80%] max-h-[80%] shadow-portfolioImg rounded-xl object-cover
+  sm:max-w-[70%] sm:max-h-[80%]
+  xl:w-[75%];
+}
+
+.project-img .vertical-img {
+  @apply absolute w-[45%] h-full top-0 right-0 object-cover object-top;
+}
+
+.view-images-btn {
+  @apply absolute z-20 opacity-0 w-full h-full flex items-center justify-center cursor-pointer transition-all duration-300 
+  bg-white/80 backdrop-blur-sm font-light 
+  hover:opacity-100
+  dark:bg-black/70 dark:text-darkPrimary;
+}
+
+/* view images */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  opacity: 0;
+  animation: fadeIn 0.6s;
+}
+
+.thumbnail-active {
+  @apply brightness-50;
+}
+
+.thumbnail-img {
+  @apply w-full h-full rounded-lg border border-slate-400 cursor-pointer transition-all duration-500 group-hover:-translate-y-5;
+}
+/* end view images */
+
+.project-detail {
+  @apply mt-6 mb-7 px-7 h-[275px] overflow-auto text-sm
+  sm:h-[250px];
+}
+
+.project-detail::-webkit-scrollbar {
+  @apply w-[4px];
+}
+
+.project-detail::-webkit-scrollbar-thumb {
+  @apply bg-primaryIconColor/60 hover:bg-slate-400 mt-52 rounded-full
+  dark:bg-slate-800 dark:hover:bg-slate-700;
+}
+
+.project-detail > p {
+  @apply text-base text-secondary dark:text-darkSecondary;
+}
+
+.project-detail > ul > li {
+  @apply list-disc list-outside marker:text-primaryIconColor dark:marker:text-darkSecondary text-secondary dark:text-darkSecondary ml-7 pl-2;
+}
+
+/* ----- Swiper ----- */
+.swiper-slide {
+  @apply px-4 w-full 
+  lg:w-1/2 
+  xl:w-1/3;
+}
+
+/* .project-card-wrapper {
+  @apply max-w-[350px] mx-auto;
+} */
+
+/* ----- Education ----- */
+#education li {
+  @apply mb-3 lowercase grayscale hover:grayscale-0 hover:text-black transition-all cursor-default dark:text-slate-700 dark:hover:text-darkPrimary;
+}
+
+#education li > img {
+  @apply inline-block w-8 pr-3;
+}
+
+.dot-line {
+  @apply before:content-[''] before:absolute before:-ml-[37px] before:mt-[5px] before:w-4 before:h-4 before:bg-[#f1f1f1] before:rounded-full dark:before:bg-darkPrimary transition-all duration-500;
+}
+
+/* ----- Contact ----- */
+.contact-input {
+  @apply w-full p-3 bg-white drop-shadow-mdCustom dark:drop-shadow-none text-secondary dark:text-darkSecondary rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-200  transition-all duration-500
+  dark:border-black dark:bg-slate-800 dark:focus:ring-1 dark:focus:ring-slate-700;
+}
+
+/* ----- Footer ----- */
+.footer-title {
+  @apply relative inline-block pl-[40px] text-[0.9rem] text-secondary uppercase tracking-titleSpacing
+  dark:text-darkPrimary;
+}
+.footer-title:before {
+  @apply sm:content-[""] absolute left-0 top-[15px] w-[30px] h-[1px] bg-[#d1d5db];
+}
+
+/* footer .text-img {
+  @apply text-secondary dark:text-darkPrimary 
+  lg:text-[16px];
+} */
