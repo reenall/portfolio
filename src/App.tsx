@@ -29,8 +29,6 @@ function App() {
           {item}
         </div>
       )}
-
-      <script src="./utils/script.js"></script>
     </>
   )
 }

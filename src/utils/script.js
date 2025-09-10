@@ -86,38 +86,38 @@ thumbnailList.addEventListener('click', (e) => {
 
 
 // ----- Swiper -----
-const swiper = new swiper(".projectList", {
-   slidesPerView: 3,
-   spaceBetween: 30,
-   loop: true,
-   pagination: {
-     el: ".swiper-pagination",
-     clickable: true,
-   },
-   navigation: {
-     nextEl: ".swiper-button-next",
-     prevEl: ".swiper-button-prev",
-   },
-   breakpoints: {
-      0: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
-      640: {
-        slidesPerView: 1,
-        spaceBetween: 0,
-      },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-      },
-      1024: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-      },
-      1280: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-      },
-   },
-});
+// const swiper = new swiper(".projectList", {
+//    slidesPerView: 3,
+//    spaceBetween: 30,
+//    loop: true,
+//    pagination: {
+//      el: ".swiper-pagination",
+//      clickable: true,
+//    },
+//    navigation: {
+//      nextEl: ".swiper-button-next",
+//      prevEl: ".swiper-button-prev",
+//    },
+//    breakpoints: {
+//       0: {
+//         slidesPerView: 1,
+//         spaceBetween: 20,
+//       },
+//       640: {
+//         slidesPerView: 1,
+//         spaceBetween: 0,
+//       },
+//       768: {
+//         slidesPerView: 2,
+//         spaceBetween: 0,
+//       },
+//       1024: {
+//         slidesPerView: 2,
+//         spaceBetween: 0,
+//       },
+//       1280: {
+//         slidesPerView: 3,
+//         spaceBetween: 30,
+//       },
+//    },
+// });
