@@ -70,7 +70,7 @@ const ProjectList = () => {
               videos: [
                 {
                   poster: '/img/project/Muse-app/dashboard.PNG', 
-                  video: '/img/project/Muse-app/video/muse app demo.MP4'
+                  video: '/img/project/Muse-app/video/muse demo.mp4'
                 },
               ]
             }}
