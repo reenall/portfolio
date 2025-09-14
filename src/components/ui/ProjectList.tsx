@@ -10,7 +10,7 @@ import ProjectCard from '../fragments/ProjectCard';
 import { useRef } from 'react';
 
 const ProjectList = () => {
-  const swiperRef = useRef(null);
+  const swiperRef = useRef<any>(null);
 
   return (
     <div className='relative'>
@@ -39,13 +39,48 @@ const ProjectList = () => {
               spaceBetween: 60,
             }
           }}
-        className='mx-20 pb-10'
+        className='pb-10 lg:mx-20'
       >
+        {/* Muse app (mobile) */}
+        <SwiperSlide>
+          <ProjectCard
+            mobileImages={
+              {
+                mainImage: '/img/project/Muse-app/dashboard.PNG',
+                verticalImage: '/img/project/Muse-app/home1.PNG'
+              }
+            }
+            description={
+              {
+                title: "AI Video Platform - Mobile app",
+                techStack: "React Native | Expo | Supabase",
+                detail: 
+                <>
+                  <h4 className="card-sub-title">About</h4>
+                  <h4>Mobile platform yang dirancang untuk berbagi video hasil generate AI. Dengan fitur ini, user dapat berbagi prompt yang digunakan dalam mengenerate video tersebut untuk dapat dipelajari oleh user lain</h4>
+                </>
+              }
+            }
+            modalBoxMedia={{ 
+              images: [
+                '/img/project/Muse-app/dashboard.PNG',
+                '/img/project/Muse-app/home1.PNG',
+                '/img/project/Muse-app/home2.PNG',
+              ],
+              videos: [
+                {
+                  poster: '/img/project/Muse-app/dashboard.PNG', 
+                  video: '/img/project/Muse-app/video/muse app demo.MP4'
+                },
+              ]
+            }}
+          />
+        </SwiperSlide>
         {/* DevClub UI */}
         <SwiperSlide>
           <ProjectCard
-            image="./img/project/DevClub-UI.png"
-            url="https://devclub-ui.vercel.app/"
+            horizontalImage="./img/project/DevClub-UI.png"
+            webUrl="https://devclub-ui.vercel.app/"
             description={
               {
                 title: "React Component Library",
@@ -63,8 +98,8 @@ const ProjectList = () => {
         {/* Mono Store */}
         <SwiperSlide>
           <ProjectCard
-            image="./img/project/mono-store-2.png" 
-            url="https://mono-store-seven.vercel.app/"
+            horizontalImage="./img/project/mono-store-2.png" 
+            webUrl="https://mono-store-seven.vercel.app/"
             description={
               {
                 title: "Public E-Commerce API",
@@ -86,8 +121,8 @@ const ProjectList = () => {
         {/* E-Commerce */}
         <SwiperSlide>
           <ProjectCard
-            image="./img/project/next-store1.png"
-            url="https://reenall-next-store.vercel.app/"
+            horizontalImage="./img/project/next-store1.png"
+            webUrl="https://reenall-next-store.vercel.app/"
             description={
               {
                 title: "E-Commerce",
@@ -124,9 +159,9 @@ const ProjectList = () => {
         {/* E-Commerce UI */}
         <SwiperSlide>
           <ProjectCard
-            image="/img/project/ecommerce1.png"
+            horizontalImage="/img/project/ecommerce1.png"
             verticalImage='/img/project/ecommerce2.png'
-            url="https://reenall.github.io/lorem-store/"
+            webUrl="https://reenall.github.io/lorem-store/"
             description={
               {
                 title: "E-Commerce UI",
@@ -149,8 +184,8 @@ const ProjectList = () => {
         {/* MERN Blog */}
         <SwiperSlide>
           <ProjectCard
-            image="./img/project/mern-blog.png"
-            url="https://mern-blog-seven-sage.vercel.app/"
+            horizontalImage="./img/project/mern-blog.png"
+            webUrl="https://mern-blog-seven-sage.vercel.app/"
             description={
               {
                 title: "MERN Blog",
@@ -174,9 +209,9 @@ const ProjectList = () => {
         {/* Tic Tac Toe */}
         <SwiperSlide>
           <ProjectCard
-            image="/img/project/tic-tac-toe2.png"
+            horizontalImage="/img/project/tic-tac-toe2.png"
             verticalImage='/img/project/tic-tac-toe-v-1.png'
-            url="https://reenall.github.io/tic-tac-toe/"
+            webUrl="https://reenall.github.io/tic-tac-toe/"
             description={
               {
                 title: "Game Tic Tac Toe",
@@ -197,9 +232,9 @@ const ProjectList = () => {
         {/* Movie API */}
         <SwiperSlide>
           <ProjectCard
-            image="./img/project/movies-h-1.png"
+            horizontalImage="./img/project/movies-h-1.png"
             verticalImage='./img/project/movies-v-1.png'
-            url="https://reenall.github.io/movies-omdb/"
+            webUrl="https://reenall.github.io/movies-omdb/"
             description={
               {
                 title: "Movies Web - API",
@@ -220,13 +255,15 @@ const ProjectList = () => {
         {/* Laravel Blog */}
         <SwiperSlide>
           <ProjectCard
-            image="/img/project/laravel-main-h.png"
+            horizontalImage="/img/project/laravel-main-h.png"
             verticalImage='/img/project/laravel-main-v.png'
-            showImages={[
-              '/img/project/laravel-main-h.png',
-              '/img/project/laravel-categories.png',
-              '/img/project/laravel-dashboard.png',
-            ]}
+            modalBoxMedia={{ 
+              images: [
+                '/img/project/laravel-main-h.png',
+                '/img/project/laravel-categories.png',
+                '/img/project/laravel-dashboard.png',
+              ]
+             }}
             description={
               {
                 title: "Blog Website",

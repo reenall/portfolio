@@ -23,6 +23,7 @@ export default function Skills() {
                     <div>
                       <li>Next.js</li>
                       <li>React.js</li>
+                      <li>React Native</li>
                     </div>
                     <div>
                       <li>Bootstrap</li>
@@ -65,7 +66,10 @@ export default function Skills() {
                     <div>
                       <li>MongoDB</li>
                       <li>Firebase</li>
+                    </div>
+                    <div>
                       <li>MySQL</li>
+                      <li>PostgreSQL</li>
                     </div>
                   </ul>
                 </div>

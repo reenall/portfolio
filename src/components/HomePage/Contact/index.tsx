@@ -16,17 +16,17 @@ export default function Contact() {
             <form action="https://formspree.io/f/meqyzklr" method="post">
               <div className="w-full mx-auto text-sm">
                 <div className="mb-8">
-                  <input type="text" id="name" name="name" placeholder="name" className="contact-input" />
+                  <input type="text" id="name" name="name" placeholder="name *" className="contact-input" required />
                 </div>
                 <div className="mb-8">
                   <input type="email" id="email" name="email" placeholder="e-mail *" className="contact-input" required />
                 </div>
                 <div className="mb-20">
-                  <textarea id="message" name="message" placeholder="message" className="contact-input h-32 resize-none"></textarea>
+                  <textarea id="message" name="message" placeholder="message *" className="contact-input h-32 resize-none" required />
                 </div>
 
                 <div>
-                  <button type="submit" className="btn w-full md:w-3/5 py-2 rounded-full shadow-lg dark:shadow-none" onclick="return confirm('Want to send this message?')">Send message</button>
+                  <button type="submit" className="btn w-full md:w-3/5 py-2 rounded-full shadow-lg dark:shadow-none" onClick={() => confirm('Want to send this message?')}>Send message</button>
                 </div>
               </div>
             </form>
@@ -39,7 +39,7 @@ export default function Contact() {
               {/* <!-- E-mail --> */}
               <a href="mailto:muhammadrenaldi588@gmail.com" target="_blank" className="flex gap-8 mb-10 group">
                 <div className="w-14 h-14 bg-bgThird rounded-xl flex items-center justify-center drop-shadow-mdCustom dark:drop-shadow-none">
-                  <svg viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd">
+                  <svg viewBox="0 0 24 24" fillRule="evenodd" clipRule="evenodd">
                     <path d="M24 21h-24v-18h24v18zm-23-16.477v15.477h22v-15.477l-10.999 10-11.001-10zm21.089-.523h-20.176l10.088 9.171 10.088-9.171z" />
                   </svg>
                 </div>
@@ -51,7 +51,7 @@ export default function Contact() {
               {/* <!-- Whatsapp --> */}
               <a href="https://wa.me/6281510604262" target="_blank" className="flex flex-wrap gap-8 group w-max">
                 <div className="w-14 h-14 bg-bgThird rounded-xl flex items-center justify-center drop-shadow-mdCustom dark:drop-shadow-none">
-                  <svg viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd">
+                  <svg viewBox="0 0 24 24" fillRule="evenodd" clipRule="evenodd">
                     <path
                       d="M8.26 1.289l-1.564.772c-5.793 3.02 2.798 20.944 9.31 20.944.46 0 .904-.094 1.317-.284l1.542-.755-2.898-5.594-1.54.754c-.181.087-.384.134-.597.134-2.561 0-6.841-8.204-4.241-9.596l1.546-.763-2.875-5.612zm7.746 22.711c-5.68 0-12.221-11.114-12.221-17.832 0-2.419.833-4.146 2.457-4.992l2.382-1.176 3.857 7.347-2.437 1.201c-1.439.772 2.409 8.424 3.956 7.68l2.399-1.179 3.816 7.36s-2.36 1.162-2.476 1.215c-.547.251-1.129.376-1.733.376"
                     />

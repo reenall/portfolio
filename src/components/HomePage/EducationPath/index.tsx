@@ -1,6 +1,29 @@
-import React from 'react'
+import { Fragment } from "react/jsx-runtime";
 
 export default function EducationPath() {
+  const leftColumnTechs = [
+    { icon: "./img/education/js3.png", name: "JavaScript", alt: "js logo" },
+    { icon: "./img/education/ts1.png", name: "TypeScript", alt: "ts logo" },
+    { icon: "./img/education/react1.png", name: "React Native", alt: "react logo" },
+    { icon: "./img/education/react1.png", name: "React.js", alt: "react logo" },
+    { icon: "./img/education/nextjs1.png", name: "Next.js", alt: "nextjs logo" },
+    { icon: "./img/education/nestjs1.png", name: "Nest.js", alt: "nest.js logo" },
+    { icon: "./img/education/nodejs1.png", name: "Node.js", alt: "node.js logo" },
+    { icon: "./img/education/expressjs.png", name: "Express.js", alt: "express.js logo" }
+  ];
+
+  // Data untuk daftar teknologi - kanan
+  const rightColumnTechs = [
+    { icon: "./img/education/php6.png", name: "PHP", alt: "php logo" },
+    { icon: "./img/education/laravel1.png", name: "Laravel", alt: "laravel logo" },
+    { icon: "./img/education/mongoDB.png", name: "MongoDB", alt: "mongoDB logo" },
+    { icon: "./img/education/mysql1.png", name: "MySQL", alt: "mysql logo" },
+    { icon: "./img/education/postgre.png", name: "PostgreSQL", alt: "postgre logo" },
+    { icon: "./img/education/css1.png", name: "CSS", alt: "css logo" },
+    { icon: "./img/education/bootstrap1.png", name: "Bootstrap", alt: "bootstrap logo" },
+    { icon: "./img/education/tailwind1.png", name: "Tailwind CSS", alt: "tailwind logo" }
+  ];
+  
   return (
     <section id="education" className="py-44">
       <div className="container">
@@ -30,29 +53,24 @@ export default function EducationPath() {
 
           <div className="w-full pb-20 lg:pb-0 lg:w-1/2 text-secondary dark:text-darkSecondary">
             <p className="leading-7 text-pretty">
-              Selain di pendidikan formal, dalam lebih dari 2 tahun terakhir saya juga terus mempelajari materi-materi pemrograman melalui pembelajaran online untuk mengembangkan kemampuan pemrograman saya. Berikut adalah daftar teknologi
-              pemrograman yang saya pelajari
+             For over 2 years, I've been deepening my knowledge in Full-Stack development alongside my formal studies by experimenting with new technologies and frameworks. Below is a list of my skills in both web and mobile development
             </p>
 
             <div className="flex flex-wrap pt-7">
               <ul className="w-1/2">
-                <li><img src="./img/education/js3.png" alt="js logo" />JavaScript</li>
-                <li><img src="./img/education/ts1.png" alt="js logo" />TypeScript</li>
-                <li><img src="./img/education/react1.png" alt="react logo" />React.js</li>
-                <li><img src="./img/education/nextjs1.png" alt="react logo" />Next.js</li>
-                <li><img src="./img/education/nestjs1.png" alt="nest.js logo" />Nest.js</li>
-                <li><img src="./img/education/nodejs1.png" alt="node.js logo" />Node.js</li>
-                <li><img src="./img/education/expressjs.png" alt="express.js logo" />Express.js</li>
+                {leftColumnTechs.map((tech, index) => (
+                  <Fragment key={index}>
+                    <TechItem icon={tech.icon} name={tech.name} />
+                  </Fragment>
+                ))}
               </ul>
 
               <ul className="w-1/2">
-                <li><img src="./img/education/php6.png" alt="php logo" />PHP</li>
-                <li><img src="./img/education/laravel1.png" alt="laravel logo" />Laravel</li>
-                <li><img src="./img/education/mongoDB.png" alt="mongoDB logo" />MongoDB</li>
-                <li><img src="./img/education/mysql1.png" alt="mysql logo" />MySQL</li>
-                <li><img src="./img/education/css1.png" alt="css logo" />CSS</li>
-                <li><img src="./img/education/bootstrap1.png" alt="bootstrap logo" />Bootstrap</li>
-                <li><img src="./img/education/tailwind1.png" alt="tailwind logo" />Tailwind CSS</li>
+                {rightColumnTechs.map((tech, index) => (
+                  <Fragment key={index}>
+                    <TechItem icon={tech.icon} name={tech.name} />
+                  </Fragment>
+                ))}
               </ul>
             </div>
           </div>
@@ -61,3 +79,10 @@ export default function EducationPath() {
     </section>
   )
 }
+
+const TechItem = ({ icon, name }: { icon: string, name: string }) => (
+  <li>
+    <img src={icon} alt={`${name} icon`} />
+    <span>{name}</span>
+  </li>
+);

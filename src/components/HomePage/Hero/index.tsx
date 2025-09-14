@@ -9,7 +9,7 @@ export default function Hero() {
 
             <p className="mb-9 text-secondary dark:text-darkSecondary leading-relaxed lg:text-lg">Bachelor of Informatics Engineering from Darma Persada University</p>
 
-            <h3 className="mb-8 text-secondary dark:text-darkSecondary">Front-end & Back-end web developer</h3>
+            <h3 className="mb-8 text-secondary dark:text-darkSecondary">Full Stack Mobile & Web Developer</h3>
 
             <a href="#contact" className="btn px-16 lg:px-5 py-2 rounded-full">Contact</a>
           </div>
