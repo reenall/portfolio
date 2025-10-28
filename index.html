@@ -9,38 +9,6 @@
 
     <title>Renaldi | Portfolio</title>
 
-    <!-- Swiper -->
-    <link rel="stylesheet" href="src/swiper/swiper-bundle.min.css" />
-    <script src="src/swiper/swiper-bundle.min.js"></script>
-
-    <style>
-      .swiper-navBtn {
-        color: #cbd5e1;
-        transition-duration: 300ms;
-      }
-      .swiper-navBtn:hover {
-        color: #475569;
-        transition-duration: 300ms;
-      }
-
-      .swiper-pagination-bullet {
-        background-color: #cbd5e1;
-        transition-duration: 500ms;
-      }
-
-      .swiper-navBtn::before,
-      .swiper-navBtn::after {
-        font-size: 30px;
-      }
-
-      @media (max-width: 1024px) {
-        .swiper-navBtn {
-          display: none;
-        }
-      }
-    </style>
-    <!-- END Swiper -->
-
     <script>
       if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
         document.documentElement.classList.add("dark");
