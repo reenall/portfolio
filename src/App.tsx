@@ -3,6 +3,7 @@ import EducationPath from "./components/HomePage/EducationPath"
 import Footer from "./components/HomePage/Footer"
 import Header from "./components/HomePage/Header"
 import Hero from "./components/HomePage/Hero"
+import HeroNEW from "./components/HomePage/Hero/HeroNEW"
 import Project from "./components/HomePage/Project"
 import Skills from "./components/HomePage/Skills"
 import BackToTop from "./components/ui/BackToTop"
@@ -10,7 +11,8 @@ import BackToTop from "./components/ui/BackToTop"
 function App() {
   const list = [
     <Header />,
-    <Hero />,
+    // <Hero />,
+    <HeroNEW />,
     <Skills />,
     <Project />,
     <EducationPath />,

@@ -2,10 +2,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 // Import styles Swiper
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css/autoplay';
 import ProjectCard from '../fragments/ProjectCard';
 import { useRef } from 'react';
 
@@ -98,39 +98,30 @@ const ProjectList = () => {
             }
           />
         </SwiperSlide>
-        {/* Muse app (mobile) */}
+        {/* Stark Fitness */}
         <SwiperSlide>
           <ProjectCard
-            mobileImages={
-              {
-                mainImage: './img/project/Muse-app/dashboard.PNG',
-                verticalImage: './img/project/Muse-app/home1.PNG'
-              }
-            }
+            onDevelopment
+            horizontalImage="./img/project/stark-fitness/wide.png"
+            verticalImage='./img/project/stark-fitness/mobile.png'
+            webUrl="https://stark-fitness.vercel.app/"
             description={
               {
-                title: "AI Video Platform - Mobile app",
-                techStack: "React Native | Expo | Supabase",
+                title: "Fitness Website",
+                techStack: "Next.js | Tailwind CSS | TypeScript",
                 detail: 
                 <>
-                  <h4 className="card-sub-title">About</h4>
-                  <h4>Mobile platform yang dirancang untuk berbagi video hasil generate AI. Dengan fitur ini, user dapat berbagi prompt yang digunakan dalam mengenerate video tersebut untuk dapat dipelajari oleh user lain</h4>
+                  <ul className="mt-5">
+                    <p className="mb-3">Features</p>
+                    <li>BMI Calculator</li>
+                    <li>Calories & Protein Calculator</li>
+                    <li>User Membership</li>
+                    <li>Product Management</li>
+                    <li>Payment Gateway</li>
+                  </ul>
                 </>
               }
             }
-            modalBoxMedia={{ 
-              images: [
-                './img/project/Muse-app/dashboard.PNG',
-                './img/project/Muse-app/home1.PNG',
-                './img/project/Muse-app/home2.PNG',
-              ],
-              videos: [
-                {
-                  poster: './img/project/Muse-app/dashboard.PNG', 
-                  video: './img/project/Muse-app/video/muse demo.mp4'
-                },
-              ]
-            }}
           />
         </SwiperSlide>
         {/* Mono Store */}
@@ -179,6 +170,41 @@ const ProjectList = () => {
                 </>
               }
             }
+          />
+        </SwiperSlide>
+        {/* Muse app (mobile) */}
+        <SwiperSlide>
+          <ProjectCard
+            mobileImages={
+              {
+                mainImage: './img/project/Muse-app/dashboard.PNG',
+                verticalImage: './img/project/Muse-app/home1.PNG'
+              }
+            }
+            description={
+              {
+                title: "AI Video Platform - Mobile app",
+                techStack: "React Native | Expo | Supabase",
+                detail: 
+                <>
+                  <h4 className="card-sub-title">About</h4>
+                  <h4>Mobile platform yang dirancang untuk berbagi video hasil generate AI. Dengan fitur ini, user dapat berbagi prompt yang digunakan dalam mengenerate video tersebut untuk dapat dipelajari oleh user lain</h4>
+                </>
+              }
+            }
+            modalBoxMedia={{ 
+              images: [
+                './img/project/Muse-app/dashboard.PNG',
+                './img/project/Muse-app/home1.PNG',
+                './img/project/Muse-app/home2.PNG',
+              ],
+              videos: [
+                {
+                  poster: './img/project/Muse-app/dashboard.PNG', 
+                  video: './img/project/Muse-app/video/muse demo.mp4'
+                },
+              ]
+            }}
           />
         </SwiperSlide>
         {/* MERN Blog */}

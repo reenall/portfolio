@@ -24,10 +24,11 @@ type ProjectCardProps = {
       images?: Array<string>
       videos?: Array<{poster: string, video: string}>
    }
+   onDevelopment?: boolean
 }
 
 export default function ProjectCard(props: ProjectCardProps) {
-   const { horizontalImage, verticalImage, mobileImages, webUrl, modalBoxMedia, description } = props
+   const { horizontalImage, verticalImage, mobileImages, webUrl, modalBoxMedia, description, onDevelopment=false } = props
    const [showModal, setShowModal] = useState(false);
    
   return (
@@ -106,9 +107,23 @@ export default function ProjectCard(props: ProjectCardProps) {
          </div>
          {/* Project Detail */}
          <div className="project-detail">
-            <a href={webUrl} className={`card-title w-max ${!webUrl && 'cursor-default'}`} target="_blank">
-               {description.title}
-            </a>
+            <div className='flex items-center justify-between mt-3 mb-5'>
+               <a 
+                  href={webUrl} 
+                  target="_blank"
+                  className={`card-title w-max 
+                     ${!webUrl && 'cursor-default'}
+                  `}
+               >
+                  {description.title}
+               </a>
+
+               {onDevelopment && (
+                  <div className='relative flex items-center px-2 bg-primaryIconColor rounded-full animate-pulse'>
+                     <p className='text-white'>on development</p>
+                  </div>
+               )}
+            </div>
             <h4 className="pb-3 text-pretty" style={{ wordSpacing: '5px' }}>
                {description.techStack}
             </h4>
