@@ -11,13 +11,18 @@ function FloatingPaths({ position }: { position: number }) {
       684 - i * 5 * position
     } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
     color: `rgba(15,23,42,${0.1 + i * 0.03})`,
+    // width: 0.5 + i * 0.03,
     width: 0.5 + i * 0.03,
   }));
 
   return (
-    <div className="absolute overflow-hidden inset-0 pointer-events-none">
+    <div className="absolute overflow-hidden inset-0 pointer-events-none
+      -top-[30%]
+      md:-top-[50%]
+      lg:-top-[100%]
+    ">
       <svg
-        className="w-full h-full text-gray-300 dark:text-white"
+        className="w-full h-full text-gray-300 dark:text-gray-700"
         viewBox="0 0 696 316"
         fill="none"
       >
@@ -30,7 +35,7 @@ function FloatingPaths({ position }: { position: number }) {
             strokeOpacity={0.1 + path.id * 0.03}
             initial={{ pathLength: 0.3, opacity: 0.6 }}
             animate={{
-              pathLength: 1,
+              pathLength: 1.3,
               opacity: [0.3, 0.6, 0.3],
               pathOffset: [0, 1, 0],
             }}
@@ -53,10 +58,10 @@ export interface BackgroundPathsProps {
 export function BackgroundPaths() {
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-transparent dark:bg-neutral-950">
+    <div className="relative min-h-screen w-full flex items-center  overflow-hidden bg-transparent">
       <div className="absolute inset-0">
         <FloatingPaths position={1} />
-        <FloatingPaths position={-1} />
+        {/* <FloatingPaths position={-1} /> */}
       </div>
 
       <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">

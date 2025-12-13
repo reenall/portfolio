@@ -12,12 +12,12 @@ export default function Header() {
     window.onscroll = () => {
       if (window.scrollY > 0) {                                                // kalo posisinya di paling atas, value scrollY = 0, kalo discroll valuenya naik
           header?.classList.add('nav-fixed');
-          backTop?.classList.remove('hidden');
-          backTop?.classList.add('flex');
+          // backTop?.classList.remove('hidden');
+          // backTop?.classList.add('flex');
       } else {
           header?.classList.remove('nav-fixed');
-          backTop?.classList.remove('flex');
-          backTop?.classList.add('hidden');
+          // backTop?.classList.remove('flex');
+          // backTop?.classList.add('hidden');
       }
     }
   }, [])
